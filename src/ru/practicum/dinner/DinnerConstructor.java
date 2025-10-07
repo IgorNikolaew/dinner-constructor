@@ -3,24 +3,26 @@ package ru.practicum.dinner;
 import java.util.ArrayList;
 
 import java.util.HashMap;
-import java.util.Random; //    ПОКА НЕ ЗНАЮ ЧТО ТУТ т
+import java.util.Random; //    ПОКА НЕ ЗНАЮ ЧТО ТУТ
 
 public class DinnerConstructor {
 
-    HashMap<String, ArrayList<String>> dinnersByType = new HashMap<>();// хранилище блюд: ключ — тип блюда (например, "Суп"), значение — список названий блюд этого типа
+   static HashMap<String, ArrayList<String>> dinnersByType = new HashMap<>();// хранилище блюд: ключ — тип блюда (например, "Суп"), значение — список названий блюд этого типа
     Random random = new Random(); //этот вспомогательный класс поможет сделать произвольные сочетания блюд
 
     //в этом методе мы добавляем компонент в подборку
     public static void addNewDish(String dishType, String dishName) {
-        ArrayList<String> dishesForType = new ArrayList<>(); //переменая для списка блюд
-        if (dinnersByType.com(dishType)) { //здесь мы должны проверить, содержит ли наше хранилище такое блюдо
-            dishesForType = ??//если мы уже работали с этим типом - используем существующий список
+        ArrayList<String> dishesForType = new ArrayList<>(); //переменная для списка блюд
+        if (dinnersByType.containsValue(dishType)) { //здесь мы должны проверить, содержит ли наше хранилище такое блюдо
+            dishesForType = dinnersByType.get(dishType);//если мы уже работали с этим типом - используем существующий список
         } else {
-            dishesForType = //для нового типа блюд создаём пустой список компонентов.
-            dinnersByType.???(dishType, dishesForType); //запоминаем новый список в хранилище
+            dishesForType = new ArrayList<>();//для нового типа блюд создаём пустой список компонентов.
+            dinnersByType.put(dishType, dishesForType); //запоминаем новый список в хранилище
         }
 
-        dishesForType.???(dishName); //независимо от того, новый это список или существующий - добавим в него конкретное блюдо
+        dishesForType.add(dishName); //независимо от того, новый это список или существующий - добавим в него конкретное блюдо
+
+
     }
 
     //метод для генерирования вариантов комбинации блюд
