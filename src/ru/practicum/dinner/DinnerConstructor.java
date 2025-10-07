@@ -3,7 +3,7 @@ package ru.practicum.dinner;
 import java.util.ArrayList;
 
 import java.util.HashMap;
-import java.util.Random; //    ПОКА НЕ ЗНАЮ ЧТО ТУТ
+import java.util.Random; //    ПОКА НЕ ЗНАЮ ЧТО ТУТ т
 
 public class DinnerConstructor {
 
